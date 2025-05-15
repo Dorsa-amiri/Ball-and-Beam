@@ -15,7 +15,7 @@ We sourced all parts to build both a test and a final model:
 - **DC Motor**: 25GA-370, 12 V, 600 RPM + motor mount bracket.  
 - **Gears**: 57-tooth spur gear + worm shaft (assembled into a custom gearbox).  
 - **Shafts & Fasteners**: 2 metal shafts + 4 steel bolts (Allen or regular), spring washers.  
-- **Perforated plates**: 2 × 3×7 cm metal plates for gear support.  
+- **Perforated plates**: 2 × (3×7 cm metal plates) for gear support.  
 - **Sensors**: HC-SR05 ultrasonic, MPU6050 IMU.  
 - **Potentiometer**: Precision 10 kΩ, 10-turn (blue).  
 - **Switches**: 2 × micro-switch, 2 × ON/OFF toggle.  
