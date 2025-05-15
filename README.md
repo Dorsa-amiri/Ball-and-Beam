@@ -11,18 +11,18 @@ Stay tuned for successive updates on control algorithms, electronics, and comput
 
 We sourced all parts to build both a test and a final model:
 
-- **PVC sheets**: 4 m of 0.7 cm-thick lightweight PVC (chosen for lightness, aesthetics, and low friction).
-- **DC Motor**: 25GA-370, 12 V, 600 RPM + motor mount bracket.
-- **Gears**: 57-tooth spur gear + worm shaft (assembled into a custom gearbox).
-- **Shafts & Fasteners**: 2 metal shafts + 4 steel bolts (Allen or regular), spring washers.
-- **Perforated plates**: 2 × 3×7 cm metal plates for gear support.
-- **Sensors**: HC-SR05 ultrasonic, MPU6050 IMU.
-- **Potentiometer**: Precision 10 kΩ, 10-turn (blue).
-- **Switches**: 2 × micro-switch, 2 × ON/OFF toggle.
-- **Brackets & clamps**: 2 × 90° brackets (3-hole per face) + 1 × 90° bracket (1-hole per face) + semi-circular motor clamp.
-- **Adhesives**: electrical tape, double-sided tape, duct tape, super glue (one-two-three), hot glue.
-- **Electronics**: Arduino Uno, breadboard, jumper wires, 7.4 V Li-ion battery + adapter.
-- **Motor Driver**: L298N module and one custom-built driver.
+- **PVC sheets**: 4 m of 0.7 cm-thick lightweight PVC (chosen for lightness, aesthetics, and low friction).  
+- **DC Motor**: 25GA-370, 12 V, 600 RPM + motor mount bracket.  
+- **Gears**: 57-tooth spur gear + worm shaft (assembled into a custom gearbox).  
+- **Shafts & Fasteners**: 2 metal shafts + 4 steel bolts (Allen or regular), spring washers.  
+- **Perforated plates**: 2 × 3×7 cm metal plates for gear support.  
+- **Sensors**: HC-SR05 ultrasonic, MPU6050 IMU.  
+- **Potentiometer**: Precision 10 kΩ, 10-turn (blue).  
+- **Switches**: 2 × micro-switch, 2 × ON/OFF toggle.  
+- **Brackets & clamps**: 2 × 90° brackets (3-hole per face) + 1 × 90° bracket (1-hole per face) + semi-circular motor clamp.  
+- **Adhesives**: electrical tape, double-sided tape, duct tape, super glue (one-two-three), hot glue.  
+- **Electronics**: Arduino Uno, breadboard, jumper wires, 7.4 V Li-ion battery + adapter.  
+- **Motor Driver**: L298N module and one custom-built driver.  
 - **Miscellaneous**: transparent plastic sheet, red-marked ping-pong ball (for future vision), straight 11-hole brackets (used for beam articulation), …
 
 ---
@@ -33,15 +33,15 @@ We sourced all parts to build both a test and a final model:
 - Stacked 0.7 cm PVC sheets → final beam length = 52 cm (with shaft clearance).
 
 ### Custom Gearbox
-- 57-tooth spur gear meshed with a worm shaft mounted on the motor.
+- 57-tooth spur gear meshed with a worm shaft mounted on the motor.  
 - Height of motor adjusted using permanent cardboard layer (not a temporary shim).
 
 ### Shaft & Support
-- Gear shaft held by two 3×7 perforated metal plates; PVC beam mounted directly.
+- Gear shaft held by two 3×7 perforated metal plates; PVC beam mounted directly.  
 - Two edge stoppers placed along the beam (not at ends) to restrict ball motion to one axis.
 
 ### Beam Articulation
-- Two 11-hole straight metal brackets (often called "metal strips") connect gear to the beam.
+- Two 11-hole straight metal brackets (often called “metal strips”) connect gear to the beam.  
 - Spring washers prevent nut loosening and ensure smooth ±15° beam rotation.
 
 ---
@@ -67,21 +67,21 @@ We sourced all parts to build both a test and a final model:
 ## ✅ Final Model
 
 ### Precision Alignment
-- Used level function of smartphone app (in compass) to align beam and motor shaft accurately.
+- Used level function of smartphone app (not compass) to align beam and motor shaft accurately.
 
 ### Rigid Support
 - Added a sturdy rectangular base + in-line stoppers on beam to confine ball motion.
 
 ### Optimized Beam Articulation
-- Replaced belts with straight 11-hole brackets to articulate beam with ±15° range.
+- Replaced belts with straight 11-hole brackets to articulate beam with ±15° range.  
 - Spring washers ensure joints stay tight without locking or jamming.
 
 ### Custom Gearbox
-- Assembled using a 57T spur gear and worm shaft for high torque, low speed.
+- Assembled using a 57T spur gear and worm shaft for high torque, low speed.  
 - Entire gearbox was hand-assembled from separate components.
 
 ### Motor Mounting & Vibration Control
-- Fixed motor using a semi-circular clamp + cardboard layer for height alignment.
+- Fixed motor using a semi-circular clamp + cardboard layer for height alignment.  
 - Used super glue on gear to prevent internal nut from slipping during operation.
 
 ### Ultrasonic Sensor Mounting
@@ -96,15 +96,15 @@ We sourced all parts to build both a test and a final model:
 | Loosening or over-tightening of nuts at the connection of two 11-hole brackets     | Use spring washers under the nuts to maintain proper tension and prevent both loosening and jamming        |
 | Motor vibration and gear misalignment                                              | Secure the motor with a semi-circular clamp and a permanent cardboard layer for precise height adjustment  |
 | PVC cracking under screw mounting points                                           | Remove problematic screws and replace those joints with high-strength adhesive                             |
-| Minor gap between beam and base causing wire-stopper rods to work loose over time | Install a single integrated shaft with holders at both ends to eliminate the gap and secure the wire rods  |
-| Sensor blind spots along the beam (ultrasonic couldn’t detect ball)               | Added a transparent tube (made of clear plastic sheet) around the beam to contain the ball and ensure consistent echo detection |
+| Minor gap between beam and base causing wire-stopper rods to work loose over time  | Install a single integrated shaft with holders at both ends to eliminate the gap and secure the wire rods  |
+| Sensor blind spots along the beam (ultrasonic couldn’t detect ball)                | Added a transparent tube (made of clear plastic sheet) around the beam to contain the ball and ensure consistent echo detection |
 
 ---
 
 ## 🔧 Assembly Instructions (Detailed)
 
 1. **Cutting PVC Sheets and Drilling Shaft Hole**  
-   We cut the PVC sheets to 52 cm in length (matching the beam's width). A hole was drilled for the shaft, 2 cm from one end of the beam.
+   We cut the PVC sheets to 52 cm in length (matching the beam’s width). A hole was drilled for the shaft, 2 cm from one end of the beam.
 
 2. **Gearbox Installation**  
    The 57-tooth spur gear and worm shaft were mounted onto the motor shaft and secured tightly using a set screw.
@@ -131,19 +131,20 @@ We sourced all parts to build both a test and a final model:
 ## 🔌 Electrical & Sensor Integration
 
 We initially used a **10-turn 10 kΩ precision potentiometer**, but it proved impractical.  
-The motor shaft did **not rotate the potentiometer even for a full turn**, which meant only a **small fraction of the potentiometer's range** was being used. As a result, the signal became extremely sensitive to noise, and fine reading was unreliable.  
+The motor shaft did **not rotate the potentiometer even for a full turn**, which meant only a **small fraction of the potentiometer’s range** was being used. As a result, the signal became extremely sensitive to noise, and fine reading was unreliable.  
 Since a **1-turn, 1 kΩ precision potentiometer** (ideal for this setup) was unavailable, we switched to using the **MPU6050 IMU**.
 
-This time, instead of relying on the **gyroscope**, which only measures angular velocity, we extracted the **beam’s angle using the accelerometer data**, which gave more stable absolute readings.
+This time, instead of relying on the **gyroscope**, which only measures angular velocity, we extracted the **beam’s angle using the accelerometer data**, which gave more stable absolute readings.  
+As mentioned, we initially mounted the IMU to measure rotation about the Z-axis, but since gravity direction doesn’t change relative to that axis, no angle change was detected. We therefore re-mounted it to measure rotation about the Y-axis.
 
 ### Ultrasonic Sensor (HC-SR05)
-- After identifying the optimal mounting height, we fixed the **ultrasonic sensor inside its plastic frame** and attached it to the beam using **electrical tape**.
+- After identifying the optimal mounting height, we fixed the **ultrasonic sensor inside its plastic frame** and attached it to the beam using **electrical tape**.  
 - ⚠️ **Be cautious when connecting the pins** – incorrect wiring can damage the sensor.  
-  We recommend **not placing it too tightly against the beam**; leave a slight gap for mechanical safety.
-- Note: **Very small balls** may not reflect the ultrasonic waves well enough for accurate detection.
+- **Leave a slight gap** between the sensor and beam to avoid mechanical stress.  
+- **Very small balls** may not reflect ultrasonic waves well enough for accurate detection.
 
 #### Sensor Inaccuracy Issue
-In certain positions along the beam, the sensor **failed to detect the ball** due to poor echo reception (reflected waves didn’t return to the receiver).  
+In certain positions along the beam, the sensor **failed to detect the ball** due to poor echo reception.  
 🔧 **Fix**: We created a **transparent tubular enclosure** over the beam using **clear plastic sheet (acrylic)**. The ball now rolls inside this tube, reducing detection errors while keeping friction low and preserving visibility.
 
 ---
@@ -155,18 +156,26 @@ In certain positions along the beam, the sensor **failed to detect the ball** du
 - Simulation scripts (`simulate.py`)  
 - PID tuning procedure (Ziegler–Nichols + manual adjust)  
 - Data logging and visualization  
-- A dedicated **test mode** to verify motor functionality before full system integration.  
-- Final and test Arduino codes to be uploaded soon.
+- A dedicated **test mode** to verify motor functionality before full system integration  
+- Final and test Arduino codes to be uploaded soon
 
 ---
 
 ## 🎥 Image Processing (Optional)
 
-*Coming soon* – ideas:  
-- Red-ball detection via OpenCV  
-- Color thresholding on the marked ping-pong ball  
-- Feedback loop into control algorithm  
-- A dedicated **image processing mode** will be tested independently.
+We wrote a **Python script** using `cv2.VideoCapture` for basic image processing based on color filtering:
+
+1. **Color Calibration**  
+   - Placed three colored markers (red, green, blue) on the beam.  
+   - The green and blue markers are fixed 50 cm apart (start and end of beam) to map pixels to centimeters.  
+
+2. **Filter-Based Tracking**  
+   - Used simple HSV color thresholds in OpenCV (`cv2.VideoCapture`) to isolate the ping-pong ball.  
+   - Ensured real-time performance by limiting processing to a cropped region around the beam.
+
+3. **Camera Stabilization**  
+   - **Challenge**: Using a laptop webcam introduced occlusion at the beam edges.  
+   - **Solution**: Employed the **DroidCam** app to turn a smartphone into a camera. We then streamed its video feed into Python, ensuring a full, unobstructed view and live distance readouts.
 
 ---
 
@@ -180,28 +189,28 @@ In certain positions along the beam, the sensor **failed to detect the ball** du
 
 ## 📋 Bill of Materials (BOM)
 
-| Component                          | Qty     | Notes                                   |
-|------------------------------------|---------|-----------------------------------------|
-| PVC sheet (0.7 cm)                 | 4 m     | Test + final model                     |
-| DC Motor (25GA-370, 600 RPM)       | 1       | Main actuator                           |
-| Custom gearbox (57T + worm)        | 1       | Self-built                              |
-| Precision potentiometer (10-turn)  | 1       | Initially used; later replaced          |
-| HC-SR05 ultrasonic sensor          | 1       | Distance measurement                    |
-| MPU6050 IMU                        | 1       | Angle measurement via accelerometer     |
-| Shaft holders                      | 2       | For stable beam rotation                |
-| Micro-switches                     | 2       | Limit detection                         |
-| ON/OFF toggle switches             | 2       | Manual power control                    |
-| Perforated plates (3×7 cm)         | 2       | Gear support                            |
-| 90° brackets (triple + single)     | 3       | Structural reinforcement                |
-| Semi-circular motor clamp          | 1       | Vibration control                       |
-| 7.4 V Li-ion battery + adapter     | 1       | Motor power                             |
-| Arduino Uno                        | 1       | Main controller                         |
-| Breadboard & jumpers               | 1 set   | Prototyping                             |
-| Transparent plastic sheet          | 1       | Used as a tube for accurate sensing     |
-| Red ping-pong ball                 | 1       | Vision target                           |
-| Screws, nuts, spring washers       | Various | Structural fasteners                    |
-| Adhesives (various types)          | Various | Tape, super glue, hot glue, etc.        |
-| Motor driver (L298N + custom)      | 1       | Motor control options                   |
+| Component                               | Qty     | Notes                                                        |
+|-----------------------------------------|---------|--------------------------------------------------------------|
+| PVC sheet (0.7 cm)                      | 4 m     | Test + final model                                           |
+| DC Motor (25GA-370, 600 RPM)            | 1       | Main actuator                                               |
+| Custom gearbox (57T + worm)             | 1       | Self-built                                                  |
+| Precision potentiometer (10-turn)       | 1       | Initially used; later replaced                             |
+| HC-SR05 ultrasonic sensor               | 1       | Distance measurement                                        |
+| MPU6050 IMU                             | 1       | Angle measurement via accelerometer (Y-axis)                |
+| Shaft holders                           | 2       | For stable beam rotation                                     |
+| Micro-switches                          | 2       | Limit detection                                             |
+| ON/OFF toggle switches                  | 2       | Manual power control                                        |
+| Perforated plates (3×7 cm)              | 2       | Gear support                                                |
+| 90° brackets (triple + single)          | 3       | Structural reinforcement                                     |
+| Semi-circular motor clamp               | 1       | Vibration control                                            |
+| 7.4 V Li-ion battery + adapter          | 1       | Motor power                                                 |
+| Arduino Uno                             | 1       | Main controller                                             |
+| Breadboard & jumpers                    | 1 set   | Prototyping                                                 |
+| Transparent plastic sheet (acrylic)     | 1       | Tube for beam enclosure and reliable ultrasonic sensing     |
+| Red ping-pong ball                      | 1       | Vision target                                               |
+| Screws, nuts, spring washers            | Various | Structural fasteners                                        |
+| Adhesives (various types)               | Various | Tape, super glue, hot glue, etc.                           |
+| Motor driver (L298N + custom)           | 1       | Motor control options                                       |
 
 ---
 
