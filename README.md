@@ -22,6 +22,7 @@ We sourced all parts to build both a test and a final model:
 - **Brackets & clamps**: 2 × 90° brackets (3-hole per face) + 1 × 90° bracket (1-hole per face) + semi-circular motor clamp.
 - **Adhesives**: electrical tape, double-sided tape, duct tape, super glue (one-two-three), hot glue.
 - **Electronics**: Arduino Uno, breadboard, jumper wires, 7.4 V Li-ion battery + adapter.
+- **Motor Driver**: L298N module and one custom-built driver.
 - **Miscellaneous**: transparent plastic sheet, red-marked ping-pong ball (for future vision), straight 11-hole brackets (used for beam articulation), …
 
 ---
@@ -83,6 +84,9 @@ We sourced all parts to build both a test and a final model:
 - Fixed motor using a semi-circular clamp + cardboard layer for height alignment.
 - Used super glue on gear to prevent internal nut from slipping during operation.
 
+### Ultrasonic Sensor Mounting
+- Ultrasonic sensor was mounted securely with tape and adjusted for optimal height, with additional consideration for echo reliability.
+
 ---
 
 ## ⚙️ Mechanical Challenges & Remedies
@@ -93,6 +97,7 @@ We sourced all parts to build both a test and a final model:
 | Motor vibration and gear misalignment                                              | Secure the motor with a semi-circular clamp and a permanent cardboard layer for precise height adjustment  |
 | PVC cracking under screw mounting points                                           | Remove problematic screws and replace those joints with high-strength adhesive                             |
 | Minor gap between beam and base causing wire-stopper rods to work loose over time | Install a single integrated shaft with holders at both ends to eliminate the gap and secure the wire rods  |
+| Sensor blind spots along the beam (ultrasonic couldn’t detect ball)               | Added a transparent tube (made of clear plastic sheet) around the beam to contain the ball and ensure consistent echo detection |
 
 ---
 
@@ -114,7 +119,7 @@ We sourced all parts to build both a test and a final model:
    Two straight 11-hole brackets were attached between the beam and gearbox. Nuts were tightened using spring washers, and ±15° beam rotation was tested.
 
 6. **Sensor Placement**  
-   The HC-SR05 ultrasonic sensor and MPU6050 IMU were installed near the beam’s centerline.
+   The HC-SR05 ultrasonic sensor and MPU6050 IMU were installed near the beam’s centerline. The ultrasonic was mounted with electrical tape, not flush against the beam.
 
 7. **Electronics Wiring**  
    Cables were connected to the Arduino Uno, and the motor was powered separately using a 7.4 V Li-ion battery.
@@ -125,10 +130,21 @@ We sourced all parts to build both a test and a final model:
 
 ## 🔌 Electrical & Sensor Integration
 
-*Coming soon* – will include:  
-- Wiring schematic for ultrasonic, IMU, potentiometer  
-- Noise-filtering tips (capacitors, cable routing)  
-- Arduino pin mapping and sample sketches  
+We initially used a **10-turn 10 kΩ precision potentiometer**, but it proved impractical.  
+The motor shaft did **not rotate the potentiometer even for a full turn**, which meant only a **small fraction of the potentiometer's range** was being used. As a result, the signal became extremely sensitive to noise, and fine reading was unreliable.  
+Since a **1-turn, 1 kΩ precision potentiometer** (ideal for this setup) was unavailable, we switched to using the **MPU6050 IMU**.
+
+This time, instead of relying on the **gyroscope**, which only measures angular velocity, we extracted the **beam’s angle using the accelerometer data**, which gave more stable absolute readings.
+
+### Ultrasonic Sensor (HC-SR05)
+- After identifying the optimal mounting height, we fixed the **ultrasonic sensor inside its plastic frame** and attached it to the beam using **electrical tape**.
+- ⚠️ **Be cautious when connecting the pins** – incorrect wiring can damage the sensor.  
+  We recommend **not placing it too tightly against the beam**; leave a slight gap for mechanical safety.
+- Note: **Very small balls** may not reflect the ultrasonic waves well enough for accurate detection.
+
+#### Sensor Inaccuracy Issue
+In certain positions along the beam, the sensor **failed to detect the ball** due to poor echo reception (reflected waves didn’t return to the receiver).  
+🔧 **Fix**: We created a **transparent tubular enclosure** over the beam using **clear plastic sheet (acrylic)**. The ball now rolls inside this tube, reducing detection errors while keeping friction low and preserving visibility.
 
 ---
 
@@ -139,6 +155,8 @@ We sourced all parts to build both a test and a final model:
 - Simulation scripts (`simulate.py`)  
 - PID tuning procedure (Ziegler–Nichols + manual adjust)  
 - Data logging and visualization  
+- A dedicated **test mode** to verify motor functionality before full system integration.  
+- Final and test Arduino codes to be uploaded soon.
 
 ---
 
@@ -148,6 +166,7 @@ We sourced all parts to build both a test and a final model:
 - Red-ball detection via OpenCV  
 - Color thresholding on the marked ping-pong ball  
 - Feedback loop into control algorithm  
+- A dedicated **image processing mode** will be tested independently.
 
 ---
 
@@ -166,9 +185,9 @@ We sourced all parts to build both a test and a final model:
 | PVC sheet (0.7 cm)                 | 4 m     | Test + final model                     |
 | DC Motor (25GA-370, 600 RPM)       | 1       | Main actuator                           |
 | Custom gearbox (57T + worm)        | 1       | Self-built                              |
-| Precision potentiometer (10-turn)  | 1       | Blue, for fine tuning                   |
+| Precision potentiometer (10-turn)  | 1       | Initially used; later replaced          |
 | HC-SR05 ultrasonic sensor          | 1       | Distance measurement                    |
-| MPU6050 IMU                        | 1       | Angle measurement                       |
+| MPU6050 IMU                        | 1       | Angle measurement via accelerometer     |
 | Shaft holders                      | 2       | For stable beam rotation                |
 | Micro-switches                     | 2       | Limit detection                         |
 | ON/OFF toggle switches             | 2       | Manual power control                    |
@@ -178,10 +197,11 @@ We sourced all parts to build both a test and a final model:
 | 7.4 V Li-ion battery + adapter     | 1       | Motor power                             |
 | Arduino Uno                        | 1       | Main controller                         |
 | Breadboard & jumpers               | 1 set   | Prototyping                             |
-| Transparent plastic sheet          | 1       | Base support                            |
+| Transparent plastic sheet          | 1       | Used as a tube for accurate sensing     |
 | Red ping-pong ball                 | 1       | Vision target                           |
 | Screws, nuts, spring washers       | Various | Structural fasteners                    |
 | Adhesives (various types)          | Various | Tape, super glue, hot glue, etc.        |
+| Motor driver (L298N + custom)      | 1       | Motor control options                   |
 
 ---
 
@@ -191,5 +211,5 @@ We sourced all parts to build both a test and a final model:
 2. Integrate **sensor feedback loop** and data logging  
 3. Develop **wireless** or **automated** control interface  
 4. Add **computer vision** for ball tracking  
-
-
+5. Provide full **test mode** and modular code examples  
+6. Upload complete wiring diagram and final control code  
