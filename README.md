@@ -9,89 +9,117 @@ Stay tuned for successive updates on control algorithms, electronics, and comput
 
 ## 📦 Procurement & Materials
 
-We sourced all parts to build both a **test** and a **final** model:
+We sourced all parts to build both a test and a final model:
 
-- **PVC sheets**: 4 m of 0.7 cm-thick lightweight PVC (chosen for lightness, aesthetics, and lower friction vs. perforated metal).  
-- **DC Motor**: 25GA-370, 12 V, 600 RPM + motor mount bracket.  
-- **Gears**: 57-tooth spur gear + custom-made worm gear (we built our own gearbox).  
-- ** shafts & fasteners**: 2 shaft holders + 4 steel bolts (Allen or regular), spring washers.  
-- **Perforated plates**: 2 × 3×7 cm metal plates for gear support.  
-- **Sensors**: HC-SR05 ultrasonic, MPU6050 IMU.  
-- **Potentiometer**: Precision 10 kΩ, 10-turn (blue).  
-- **Switches**: 2 × micro-switch, 2 × ON/OFF toggle.  
-- **Brackets & clamps**: 2 triple 90° brackets + 1 single 90° bracket + semi-circular motor clamp.  
-- **Adhesives**: electrical tape, double-sided tape, duct tape, paper tape, super glue (one-two-three), hot glue.  
-- **Electronics**: Arduino Uno, breadboard, jumper wires, 7.4 V Li-ion battery + adapter.  
-- **Miscellaneous**: transparent plastic sheet, red-marked ping-pong ball (for future vision), …  
+- **PVC sheets**: 4 m of 0.7 cm-thick lightweight PVC (chosen for lightness, aesthetics, and low friction).
+- **DC Motor**: 25GA-370, 12 V, 600 RPM + motor mount bracket.
+- **Gears**: 57-tooth spur gear + worm shaft (assembled into a custom gearbox).
+- **Shafts & Fasteners**: 2 metal shafts + 4 steel bolts (Allen or regular), spring washers.
+- **Perforated plates**: 2 × 3×7 cm metal plates for gear support.
+- **Sensors**: HC-SR05 ultrasonic, MPU6050 IMU.
+- **Potentiometer**: Precision 10 kΩ, 10-turn (blue).
+- **Switches**: 2 × micro-switch, 2 × ON/OFF toggle.
+- **Brackets & clamps**: 2 × 90° brackets (3-hole per face) + 1 × 90° bracket (1-hole per face) + semi-circular motor clamp.
+- **Adhesives**: electrical tape, double-sided tape, duct tape, super glue (one-two-three), hot glue.
+- **Electronics**: Arduino Uno, breadboard, jumper wires, 7.4 V Li-ion battery + adapter.
+- **Miscellaneous**: transparent plastic sheet, red-marked ping-pong ball (for future vision), straight 11-hole brackets (used for beam articulation), …
 
 ---
 
 ## 🧱 Mechanical Structure Overview
 
-1. **PVC Beam**  
-   - Stacked 0.7 cm sheets → final beam length = 52 cm (2 cm reserved for shaft pass-through).  
-2. **Custom Gearbox**  
-   - 57-tooth spur gear meshed with a self-made worm gear on motor shaft.  
-   - Temporary cardboard shim under motor for height alignment; later replaced with a second shaft.  
-3. **Shaft & Support**  
-   - Two 3×7 perforated plates hold the gear shaft.  
-   - Edge stoppers on beam ends restrict ball to one linear axis.  
-4. **Belt Connection**  
-   - Two 11-tooth timing belts link gear to beam carriage, allowing ±15° rotation.  
-   - Spring washer between belt-fastening nuts prevents jamming.
+### PVC Beam
+- Stacked 0.7 cm PVC sheets → final beam length = 52 cm (with shaft clearance).
+
+### Custom Gearbox
+- 57-tooth spur gear meshed with a worm shaft mounted on the motor.
+- Height of motor adjusted using permanent cardboard layer (not a temporary shim).
+
+### Shaft & Support
+- Gear shaft held by two 3×7 perforated metal plates; PVC beam mounted directly.
+- Two edge stoppers placed along the beam (not at ends) to restrict ball motion to one axis.
+
+### Beam Articulation
+- Two 11-hole straight metal brackets (often called "metal strips") connect gear to the beam.
+- Spring washers prevent nut loosening and ensure smooth ±15° beam rotation.
 
 ---
 
 ## 🧪 Test Model & Lessons Learned
 
-**Issues in the test version**:  
-- **PVC damage**: over-tightened screws cracked or pierced PVC at belt mounts → _Final fix_: use metal brackets + strong glue.  
-- **Unstable base**: single support made structure wobbly → _Final fix_: solid rectangular block base.  
-- **Limited rotation**: hinge joint restricted beam angle → _Final fix_: replaced hinge with shaft.  
-- **Gear misalignment**: motor too low to engage worm gear → _Final fix_: raised motor by a few mm.  
+**Issues in the test version:**
+
+- **PVC damage**: screws pierced PVC at some mount points  
+  → *Final fix*: replaced some joints with strong adhesive instead of mechanical fastening.
+
+- **Unstable base**: initial base lacked rigidity  
+  → *Final fix*: used a rectangular solid block for high stability.
+
+- **Limited rotation**: hinge joint limited beam motion  
+  → *Final fix*: replaced hinge with free-spinning shaft.
+
+- **Gear misalignment**: motor height mismatched with gear  
+  → *Final fix*: fixed with a permanent cardboard layer under motor.
 
 ---
 
 ## ✅ Final Model
 
-1. **Precision Alignment**  
-   - Used smartphone “compass/level” app to align beam and motor axes exactly.  
-2. **Rigid Support**  
-   - Added sturdy rectangular base + edge stoppers on both beam sides.  
-3. **Optimized Belt & Gear**  
-   - Belt anchor positioned to allow ±15° range (±10–12° sufficient for control; ±15° for motor testing).  
-   - Spring washer prevents nut loosening and belt jamming.  
-4. **Custom-Built Gearbox**  
-   - Built from 57T spur gear + self-cut worm screw → increased torque, reduced speed.  
-5. **Motor Mounting & Vibration Control**  
-   - Semi-circular clamp under motor fixes it downward; tension tuned to avoid blocking shaft.  
-   - Super-glued belt to gear when internal nut slipped.  
+### Precision Alignment
+- Used level function of smartphone app (in compass) to align beam and motor shaft accurately.
+
+### Rigid Support
+- Added a sturdy rectangular base + in-line stoppers on beam to confine ball motion.
+
+### Optimized Beam Articulation
+- Replaced belts with straight 11-hole brackets to articulate beam with ±15° range.
+- Spring washers ensure joints stay tight without locking or jamming.
+
+### Custom Gearbox
+- Assembled using a 57T spur gear and worm shaft for high torque, low speed.
+- Entire gearbox was hand-assembled from separate components.
+
+### Motor Mounting & Vibration Control
+- Fixed motor using a semi-circular clamp + cardboard layer for height alignment.
+- Used super glue on gear to prevent internal nut from slipping during operation.
 
 ---
 
 ## ⚙️ Mechanical Challenges & Remedies
 
-| Challenge                          | Remedy                                                      |
-|------------------------------------|-------------------------------------------------------------|
-| Belt slipping inside gear         | Fixed belt with super glue                                  |
-| Motor vibration & gear disengagement | Added semi-bracket under motor with controlled tension      |
-| PVC cracking at belt mount         | Metal bracket + strong adhesive                             |
-| Shaft-base gap causing looseness   | Added second shaft to eliminate gap                         |
+| Challenge                                                                          | Remedy                                                                                                     |
+|------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Loosening or over-tightening of nuts at the connection of two 11-hole brackets     | Use spring washers under the nuts to maintain proper tension and prevent both loosening and jamming        |
+| Motor vibration and gear misalignment                                              | Secure the motor with a semi-circular clamp and a permanent cardboard layer for precise height adjustment  |
+| PVC cracking under screw mounting points                                           | Remove problematic screws and replace those joints with high-strength adhesive                             |
+| Minor gap between beam and base causing wire-stopper rods to work loose over time | Install a single integrated shaft with holders at both ends to eliminate the gap and secure the wire rods  |
 
 ---
 
-## 🔧 Assembly Instructions (detailed)
+## 🔧 Assembly Instructions (Detailed)
 
-1. **Cut PVC Sheets** to 52 cm × beam width; drill 2 cm hole for shaft.  
-2. **Mount Gearbox**: attach 57T gear + worm screw to motor shaft; secure with set-screw.  
-3. **Align & Shim**: use cardboard shim, then install second shaft holder for permanent alignment.  
-4. **Install Motor & Bracket**: fix motor to base bracket; adjust height to mesh gears smoothly.  
-5. **Attach Beam**: slide beam onto shaft; add end-stops.  
-6. **Connect Belts**: loop two 11T belts; tighten nuts with spring washer; test ±15° travel.  
-7. **Sensor Placement**: position HC-SR05 and MPU6050 near beam centerline.  
-8. **Wire Electronics**: route cables to Arduino Uno; power motor via separate 7.4 V supply.  
+1. **Cutting PVC Sheets and Drilling Shaft Hole**  
+   We cut the PVC sheets to 52 cm in length (matching the beam's width). A hole was drilled for the shaft, 2 cm from one end of the beam.
 
-*Full wiring diagram and code examples coming soon…*
+2. **Gearbox Installation**  
+   The 57-tooth spur gear and worm shaft were mounted onto the motor shaft and secured tightly using a set screw.
+
+3. **Beam Alignment and Height Adjustment**  
+   Using the leveling tool in a smartphone app, we aligned the beam by adjusting the motor’s position along the beam axis and modifying the beam height. Then we installed the second shaft holder for permanent alignment.
+
+4. **Motor and Bracket Mounting**  
+   The motor was mounted on the base bracket, and a cardboard shim was placed underneath to raise its height. This ensured proper meshing between the worm shaft and the spur gear. The gear shaft was fixed onto a perforated metal plate using bolts.
+
+5. **Attaching the 11-Hole Brackets**  
+   Two straight 11-hole brackets were attached between the beam and gearbox. Nuts were tightened using spring washers, and ±15° beam rotation was tested.
+
+6. **Sensor Placement**  
+   The HC-SR05 ultrasonic sensor and MPU6050 IMU were installed near the beam’s centerline.
+
+7. **Electronics Wiring**  
+   Cables were connected to the Arduino Uno, and the motor was powered separately using a 7.4 V Li-ion battery.
+
+*Full wiring diagram and sample code coming soon…*
 
 ---
 
